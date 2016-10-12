@@ -33,6 +33,8 @@ mongoose.connection.once('open', function() {
     app.use(route, controller(app, route));
   });
 
-  console.log('Listening on port 3000...');
-  app.listen(3000);
+  
+  var port = process.env.PORT || 4000;
+  app.listen(port);
+  console.log("Listening on port " + port  + "...");
 });
